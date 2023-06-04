@@ -1,10 +1,9 @@
 @import-normalize; 
 
 :root {
-  --color-orange: #ffc107;
-  --color-light: #fdf7f2;
+  --color-light: #EBD8FF;
   --color-dark: #111111;
-  --color-blue-gradient: linear-gradient(
+  --color-violet-gradient: linear-gradient(
     114.99deg,
       #471CA9 -0.99%,
       #5736A3 54.28%,
@@ -14,7 +13,7 @@
   --color-light-blue: #cce4fb;
   --color-wight: #ffffff;
 
-  --color-green: #00c3ad;
+  --color-blue: #5CD3A8;
   --color-red: #f43f5e;
   --color-light-background: #fef9f9;
   --shadow-default: 3px 8px 14px rgba(136, 198, 253, 0.19);

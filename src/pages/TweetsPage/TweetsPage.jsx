@@ -1,5 +1,7 @@
-export const TweetsPage = () => {
+const TweetsPage = () => {
   return (
-    <div>TweetsPage</div>
+    <p>TweetsPage</p>
   )
 }
+
+export default TweetsPage;
