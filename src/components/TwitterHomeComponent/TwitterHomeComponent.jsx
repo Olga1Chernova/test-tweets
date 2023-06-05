@@ -31,6 +31,16 @@ export const TwitterHomeComponent = () => {
             />
           </Link>
         </div>
+        <div className={css.iframe}>
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/-fBz_oYajJc"
+            title="YouTube Video"
+            style={{ border: 'none' }}
+            allowFullScreen
+          />
+        </div>
       </div>
     );
 }
