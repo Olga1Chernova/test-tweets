@@ -18,7 +18,9 @@ const Header = () => {
     </li>
   ));
 
-  return <ul className={css.header}>{elements}</ul>;
+  return (
+      <ul className={css.header}>{elements}</ul>
+  );
 };
 
 export default Header;
