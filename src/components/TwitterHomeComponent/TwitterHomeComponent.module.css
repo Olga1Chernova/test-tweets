@@ -1,0 +1,50 @@
+
+.container {
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+}
+
+.download {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #766A92;
+}
+
+.logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+@keyframes spinHorizontal {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.twitterLogo {
+    width: 600px;
+    height: 140px;
+    transition: transform 0.5s;
+}
+
+.twitterLogo:hover {
+    animation: spinHorizontal 1s infinite;
+}
