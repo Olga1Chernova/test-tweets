@@ -27,6 +27,17 @@ export const SingleTweet = ({ user }) => {
     );
   }, [user.id, followersCount]);
 
+  useEffect(() => {
+    const storedIsActive = localStorage.getItem(`isActive-${user.id}`);
+    if (storedIsActive) {
+      setIsActive(JSON.parse(storedIsActive));
+    }
+  }, [user.id]);
+
+  useEffect(() => {
+    localStorage.setItem(`isActive-${user.id}`, JSON.stringify(isActive));
+  }, [user.id, isActive]);
+
   const handleButtonClick = () => {
     setIsActive(prevIsActive => !prevIsActive);
     setFollowersCount(prevCount => (isActive ? prevCount - 1 : prevCount + 1));
