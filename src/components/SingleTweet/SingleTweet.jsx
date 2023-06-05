@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import logo from '../../images/Logo.png';
 import cardDesign from '../../images/card-design.png';
@@ -35,4 +36,12 @@ export const SingleTweet = ({ user }) => {
       </div>
     </li>
   );
+};
+
+SingleTweet.propTypes = {
+  user: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+  }).isRequired,
 };
