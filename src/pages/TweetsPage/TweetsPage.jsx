@@ -1,6 +1,8 @@
+import { TweetsList } from "components/TweetsList/TweetsList";
+
 const TweetsPage = () => {
   return (
-    <p>TweetsPage</p>
+    <TweetsList />
   )
 }
 
