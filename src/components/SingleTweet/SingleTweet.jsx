@@ -1,16 +1,35 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../images/Logo.png';
 import cardDesign from '../../images/card-design.png';
 import css from './SingleTweet.module.css';
 
 export const SingleTweet = ({ user }) => {
   const [isActive, setIsActive] = useState(false);
-  const [followersCount, setFollowersCount] = useState(user.followers);
+  const [followersCount, setFollowersCount] = useState(0);
+
+  useEffect(() => {
+    const storedFollowersCount = localStorage.getItem(
+      `followersCount-${user.id}`
+    );
+    if (storedFollowersCount) {
+      const parsedFollowersCount = JSON.parse(storedFollowersCount);
+      setFollowersCount(parsedFollowersCount);
+    } else {
+      setFollowersCount(user.followers);
+    }
+  }, [user.id, user.followers]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      `followersCount-${user.id}`,
+      JSON.stringify(followersCount)
+    );
+  }, [user.id, followersCount]);
 
   const handleButtonClick = () => {
-    setIsActive(!isActive);
-    setFollowersCount(isActive ? followersCount - 1 : followersCount + 1);
+    setIsActive(prevIsActive => !prevIsActive);
+    setFollowersCount(prevCount => (isActive ? prevCount - 1 : prevCount + 1));
   };
 
   return (
@@ -40,6 +59,7 @@ export const SingleTweet = ({ user }) => {
 
 SingleTweet.propTypes = {
   user: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     avatar: PropTypes.string.isRequired,
     tweets: PropTypes.number.isRequired,
     followers: PropTypes.number.isRequired,

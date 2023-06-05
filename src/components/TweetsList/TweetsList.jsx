@@ -7,7 +7,7 @@ import css from './TweetList.module.css';
 export const TweetsList = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(3); 
+  const [usersPerPage] = useState(3);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -47,4 +47,3 @@ export const TweetsList = () => {
     </>
   );
 };
-
